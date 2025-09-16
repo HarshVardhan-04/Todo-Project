@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const Todo = require("./models/schema.js");
 const methodOverride = require("method-override");
-const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 
 app.use(express.static(path.join(__dirname , "public")));
@@ -71,6 +71,6 @@ app.delete("/task/:id" , async (req, res)=>{
   res.redirect("/todo");
  })
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log("server is running");
 });
