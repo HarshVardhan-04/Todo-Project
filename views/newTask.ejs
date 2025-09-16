@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Task Details</h1>
+    <div class="form">
+    <form method="POST" action="/todo">
+        <label for="task"></label>
+        <input type="text" name="task" placeholder="Add your new Task">
+        <br><br>
+
+        <label style="margin-left: 30px;" for="">DueDate</label>
+        <label style="margin-left: 130px;" for="">Choose Priority</label><br>
+
+        <input type="date" name="dueDate" placeholder="DD/MM/YYYY">
+        <select name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <br>
+        <button class="btn" type="submit">Add</button>
+    </form>
+    </div>
+    </div>
+</body>
+</html>

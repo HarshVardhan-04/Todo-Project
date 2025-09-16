@@ -1,0 +1,208 @@
+body {
+    background-image: url("back.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: aqua;
+    margin: 20px 10px;
+}
+
+/* Table */
+table, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+.list {
+    width: 86%;
+    padding-left: 40px;
+}
+
+.todo-items {
+    display: flex;
+}
+
+.header {
+    background-color:  #a28089;
+    color: blanchedalmond;
+}
+
+/* Priority-based row coloring */
+tr.high td {
+    background: rgba(255, 0, 0, 0.15);
+    box-shadow: inset 0 0 10px rgba(223, 177, 177, 0.6);
+    color: aqua;
+}
+
+tr.medium td {
+    background: rgba(255, 165, 0, 0.15);
+    box-shadow: inset 0 0 10px rgba(223, 177, 177, 0.6);
+    color: aqua;
+}
+
+tr.low td {
+    background: rgba(0, 255, 0, 0.15);
+    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.6);
+    color: aqua;
+}
+
+/* Hover Glow */
+tr.high:hover td {
+    background: rgba(255, 0, 0, 0.25);
+    box-shadow: 0 0 15px red;
+}
+
+tr.medium:hover td {
+    background: rgba(255, 165, 0, 0.25);
+    box-shadow: 0 0 15px orange;
+}
+
+tr.low:hover td {
+    background: rgba(0, 255, 0, 0.25);
+    box-shadow: 0 0 15px lime;
+}
+
+/* Cell Styling */
+.td1 {
+  padding: 10px 450px 10px 380px; 
+  border-radius: 20px 0px 0px 20px;
+}
+
+.td2 {
+  padding: 10px 60px 10px 60px;
+}
+
+.td3 {
+  padding: 10px 60px 10px 60px;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.td4 {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.td5 {
+   border-radius: 0px 20px 20px 0px;
+}
+
+/* Button */
+.btn {
+  position: relative;
+  padding: 10px 25px;
+  font-size: 20px;
+  color: white;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(37, 117, 252, 0.4);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Second Button */
+.newbtn {
+  position: relative;
+  margin-left: 45px;
+  margin-bottom: 30px;
+  font-size: 15px;
+  padding: 6px 23px;
+  border-radius: 30px;
+  background-color: rgb(241, 60, 241);
+  color: #3a003a;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.newbtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(37, 117, 252, 0.4);
+}
+
+.newbtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: left 0.5s ease;
+}
+
+.newbtn:hover::before {
+  left: 100%;
+}
+
+/* ✅ RESPONSIVE FIXES */
+@media (max-width: 1024px) {
+  .td1 {
+    padding: 10px 200px 10px 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .td1 {
+    padding: 10px 80px;
+  }
+  .td2, .td3 {
+    padding: 10px 30px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .btn {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+  .newbtn {
+    font-size: 14px;
+    padding: 5px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    font-size: 0.85rem;
+    width: 100%;
+  }
+  .td1, .td2, .td3 {
+    padding: 8px 15px;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  .btn, .newbtn {
+    font-size: 14px;
+    padding: 6px 15px;
+  }
+}

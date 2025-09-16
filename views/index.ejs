@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="styleMain.css">
+</head>
+<body>
+    <h1>YOUR TODO LIST</h1>
+    <form method="GET" action="/newtask">
+        <button class="newbtn">
+                New Task
+        </button>
+    </form>
+    <div class="list">
+    <table border="1">
+        <tr class="header" >
+            <td class="td1">Task</td>
+            <td class="td2">DueDate</td>
+            <td class="td3">Priority</td>
+            
+        </tr>
+    <% let i = 1%>
+    <% for(t of todos){ %>
+        <div class="todo-items">
+        <tr class="<%= t.priority.toLowerCase() %>">
+            <td class="td4"><%= i %> : <%= t.task%></td>
+            <td><%= t.dueDate %></td>
+            <td class="td5"><%= t.priority %></td>
+            
+            <td style="border-radius: 20px;">
+                <form method="POST" action="/task/<%= t._id %>?_method=DELETE">
+                    <button class="btn">Completed</button>
+                </form>
+            </td>
+        </tr>
+        <% i++ %>
+        </div>
+     
+    <%}%>
+    </div>
+    </table>
+</body>
+</html>

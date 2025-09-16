@@ -1,0 +1,79 @@
+h1{
+    text-align: center;
+    background-color: rgb(92, 63, 63);
+    color: bisque;
+    margin: 200px 520px 0px 500px;
+    border-radius: 30px 30px 0px 0px;
+    font-family: 'Orbitron';
+    padding: 5px;
+
+}
+
+body {
+     background-image: url("back.jpg");
+    background-size: cover;
+    background-color: rgb(82, 74, 87);
+}
+
+.form {
+    margin-left: 500px;
+    width: 500px;
+    height: 200px;
+    background-color: #acb7ae;
+    border-radius: 0px 0px 30px 30px;
+     box-shadow: 5px 5px 15px rgba(251, 248, 248, 0.3);
+}
+
+input[type="text"]{
+    width: 90%;
+    padding: 10px;
+    margin: 20px 0px 0px 10px;
+    border-radius: 5px;
+}
+
+input[type="date"]{
+    margin: 10px 0px 0px 30px;
+    border-radius: 5px;
+}
+
+select{
+    margin-left: 75px;
+    border-radius: 5px;
+}
+
+.btn {
+      position: relative;
+      padding: 10px 25px;
+      font-size: 20px;
+      color: white;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-left: 200px; 
+       margin-top: 15px;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(37, 117, 252, 0.4);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: skewX(-45deg);
+      transition: left 0.5s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+ 
