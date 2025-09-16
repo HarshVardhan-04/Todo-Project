@@ -40,11 +40,11 @@ main()
 
 // console.log(task1);
 
-app.get("/todo", async (req , res)=>{
+app.get("/", async (req , res)=>{
     let todos = await Todo.find();
     res.render("index.ejs" , {todos});
 })
-app.post("/todo", async (req , res)=>{
+app.post("/", async (req , res)=>{
    let{ task , dueDate, priority} = req.body;
    let newTask = new Todo({
     task,
@@ -53,12 +53,12 @@ app.post("/todo", async (req , res)=>{
    });
    
    await newTask.save();
-   res.redirect("/todo");
+   res.redirect("/");
 })
 
-app.get("/", (req, res) => {
-  res.send("TODO");
-});
+// app.get("/", (req, res) => {
+//   res.send("TODO");
+// });
 
 app.get("/newtask" , async (req , res)=>{
     res.render("newTask.ejs");
@@ -68,7 +68,7 @@ app.delete("/task/:id" , async (req, res)=>{
   let { id } = req.params;
   let deleted = await Todo.findByIdAndDelete(id);
   //console.log(deleted);
-  res.redirect("/todo");
+  res.redirect("/");
  })
 
 app.listen(PORT, () => {
